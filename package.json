@@ -4,13 +4,19 @@
   "description": "A react boilerplate embrace React, Babel, Express, Jest, Webpack, etc.",
   "main": "index.js",
   "scripts": {
+    "test": "jest",
+    "coverage": "jest --coverage",
     "buildDev": "rm -rf dist && webpack --mode development --config webpack.server.config.js && webpack --mode development --config webpack.dev.config.js",
     "buildProd": "rm -rf dist && webpack --mode production --config webpack.server.config.js && webpack --mode production --config webpack.prod.config.js",
     "start": "node ./dist/server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/xuzewei/react-boilerplate.git"
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js",
+      "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
+    },
+    "verbose": true,
+    "testURL": "http://localhost/"
   },
   "keywords": [
     "Node",
@@ -19,12 +25,10 @@
   ],
   "author": "xuzewei",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/xuzewei/react-boilerplate/issues"
-  },
-  "homepage": "https://github.com/xuzewei/react-boilerplate#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -33,6 +37,8 @@
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
     "css-loader": "^2.0.1",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.7.1",
     "eslint": "^5.10.0",
     "eslint-loader": "^2.1.1",
     "eslint-plugin-import": "^2.14.0",
@@ -43,6 +49,7 @@
     "file-loader": "^2.0.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "jest": "^22.4.4",
     "style-loader": "^0.23.1",
     "webpack": "^4.27.1",
     "webpack-cli": "^3.1.2",
