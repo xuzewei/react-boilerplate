@@ -4,9 +4,13 @@ A react boilerplate embrace React, Babel, Express, Jest, Webpack, etc.
 
 ## Setup
 
-npm install
-npm run buildDev or npm run buildProd
-npm start
+```sh
+$ npm install
+# mode for development
+$ npm run buildDev && npm start
+# mode for product
+$ npm run buildProd && npm start
+```
 
 **Notes:**
 

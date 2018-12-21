@@ -1,1 +1,1 @@
-module.exports = {};  // eslint-disable-line no-undef
+module.exports = {};
