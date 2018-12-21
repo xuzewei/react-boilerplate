@@ -1,5 +1,3 @@
-// eslint
-
 module.exports = {
   "plugins": [ "react" ],
   "extends": [
